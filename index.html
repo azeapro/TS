@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des dépenses</title>
+</head>
+
+<body>
+
+<link rel="stylesheet" href="src/style.css">
+<main class="container">
+
+    <header>
+        <h1>Gestion des dépenses</h1>
+        <p>Suivez et gérez vos dépenses facilement.</p>
+    </header>
+
+    <section class="card">
+        <h2>Ajouter une dépense</h2>
+
+        <form id="form-depense">
+
+            <input
+                type="text"
+                id="titre"
+                placeholder="Nom de la dépense"
+                required
+            >
+
+            <input
+                type="number"
+                id="montant"
+                placeholder="Montant en FCFA"
+                min="1"
+                required
+            >
+
+            <select id="categorie" required>
+                <option value="">Choisir une catégorie</option>
+                <option value="Transport">Transport</option>
+                <option value="Alimentation">Alimentation</option>
+                <option value="Scolarité">Scolarité</option>
+                <option value="Autres">Autres</option>
+            </select>
+
+            <button type="submit">Ajouter la dépense</button>
+
+        </form>
+    </section>
+
+    <section class="card">
+        <div class="liste-header">
+            <h2>Mes dépenses</h2>
+
+            <select id="filtre">
+                <option value="Toutes">Toutes les catégories</option>
+                <option value="Transport">Transport</option>
+                <option value="Alimentation">Alimentation</option>
+                <option value="Scolarité">Scolarité</option>
+                <option value="Autres">Autres</option>
+            </select>
+        </div>
+
+        <div id="liste-depenses"></div>
+
+        <div class="total">
+            <h3>Total des dépenses</h3>
+            <p id="total">0 FCFA</p>
+        </div>
+    </section>
+
+</main>
+
+<script type="module" src="/src/main.ts"></script>
+
+
+</body>
+</html>
